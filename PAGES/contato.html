@@ -67,6 +67,31 @@
         <p>Segunda a sexta: 11h às 22h</p>
         <p>Sábado e domingo: 11h às 23h</p>
       </section>
+
+      <section id="ConteinerFormContato">
+        <h1>Fale com a Pojos Hermanos</h1>
+        <p>
+          Tem dúvidas sobre nosso restaurante ou algum tipo de sugestão? escreva
+          sua mensagem:
+        </p>
+        <form id="FormContato">
+          <label for="NomeContato">Nome completo:</label>
+          <input id="NomeContato" type="text" required />
+          <br />
+          <label for="EmailContato">Email:</label>
+          <input id="EmailContato" type="email" required />
+          <br />
+          <label for="MensagemContato">Mensagem:</label>
+          <textarea
+            id="MensagemContato"
+            rows="5"
+            required
+            minlength="50"
+          ></textarea>
+          <br />
+          <button type="submit">Enviar mensagem!</button>
+        </form>
+      </section>
     </main>
 
     <footer>

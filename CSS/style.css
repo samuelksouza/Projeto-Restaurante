@@ -1,101 +1,323 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    color: black;
-    background-color: white;
+/* Variaveis centralizam cores e largura maxima para facilitar ajustes visuais. */
+:root {
+  color-scheme: light;
+  --color-primary: #8f1d14; /* Vermelho usado em cabecalhos, botoes e titulos. */
+  --color-primary-dark: #68150f; /* Tom mais escuro para o hover dos botoes. */
+  --color-accent: #f2c94c; /* Dourado para destaque e foco por teclado. */
+  --color-background: #fffaf0; /* Fundo levemente quente da pagina. */
+  --color-surface: #ffffff; /* Fundo dos cartoes e cor de texto sobre vermelho. */
+  --color-text: #292522; /* Cor principal dos textos. */
+  --color-muted: #625a54; /* Tom auxiliar para textos secundarios, se necessario. */
+  --color-border: #d8d0c8; /* Borda suave dos campos e cartoes. */
+  --content-width: 1100px; /* Evita que o conteudo fique largo demais em telas grandes. */
 }
 
+/* Inclui borda e preenchimento no tamanho declarado de todos os elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define a tipografia, as cores gerais e o espacamento entre linhas do site. */
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Centraliza o conteudo e limita sua largura; o espaco lateral evita encostar na tela. */
+main {
+  width: min(var(--content-width), 100% - 2rem);
+  margin: 2rem auto;
+}
+
+/* Padroniza a cor e a altura das linhas dos titulos. */
 h1,
 h2,
 h3 {
-    color: red;
-    text-align: center;
+  color: var(--color-primary);
+  line-height: 1.2;
 }
 
+/* Centraliza apenas os titulos principais, sem afetar h3 de cartoes. */
+h1,
+h2 {
+  text-align: center;
+}
+
+/* Mantem os paragrafos legiveis e cria espaco abaixo de cada um. */
 p {
-    line-height: 1.6;
-    margin: 10px 0;
+  margin: 0 0 1rem;
 }
 
+/* Define uma cor padrao para links fora das areas com fundo vermelho. */
+a {
+  color: var(--color-primary);
+}
+
+/* Escurece os links ao passar o mouse, sinalizando que podem ser acionados. */
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Organiza a marca e a navegacao em linha, quebrando em telas menores.
+   O fundo vermelho e o espaco interno destacam o cabecalho. */
 header {
-    background-color: red;
-    color: white;
-    padding: 20px 0;
-    margin: 10px 0;
-    text-align: center;
-}
-
-header a {
-    text-decoration:none;
-    color: white;
-
-}
-
-footer {
-  color: white;
-  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+  margin: 0;
+  padding: 1rem max(1rem, calc((100% - var(--content-width)) / 2));
+  background-color: var(--color-primary);
+  color: var(--color-surface);
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
 }
 
-footer a {
-    text-decoration: none;
-    color: white;
-}
- 
-.logo {
-  text-decoration: none; /* Tira o sublinado do link */
-  font-family: Arial, Helvetica, sans-serif; /* Define a fonte da letra */
-  font-size: 24px; /* Define o tamanho da letra */
-  font-weight: bold; /* Coloca em negrito */
-  color: white; /* cor da letra */
+/* Remove o sublinhado da marca e mantem marca/navegacao legiveis no fundo vermelho. */
+.logo a,
+header nav a {
+  color: var(--color-surface);
+  text-decoration: none;
 }
 
+/* Ajusta o titulo da marca para nao ter margem padrao nem ocupar tamanho excessivo. */
 .logo h1 {
-    color: white;
+  margin: 0;
+  color: var(--color-surface);
+  font-size: 1.75rem;
 }
 
+/* Usa dourado para destacar a segunda parte do nome. */
 .logo span {
-  color: yellow;
+  color: var(--color-accent);
 }
 
+/* Distribui os links do menu e permite que eles quebrem para outra linha. */
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+
+/* Aumenta a area vertical clicavel dos links da navegacao. */
+header nav a {
+  padding: 0.35rem 0;
+}
+
+/* Destaca os links da navegacao sem perder contraste com o fundo. */
+header nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Cria colunas adaptaveis para as secoes do rodape.
+   Em telas estreitas, a grade reduz automaticamente o numero de colunas. */
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1.5rem;
+  padding: 2rem max(1rem, calc((100% - var(--content-width)) / 2));
+  background-color: var(--color-primary);
+  color: var(--color-surface);
   text-align: center;
-  margin-top: 10px;
 }
 
-nav a:hover {
-  color: yellow;
+/* Mantem titulos e links do rodape claros sobre o fundo vermelho. */
+footer section h3,
+footer a {
+  color: var(--color-surface);
 }
 
+/* Reduz o espaco dos paragrafos do rodape para deixá-lo mais compacto. */
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Faz o aviso de direitos autorais ocupar toda a linha da grade. */
+footer > p {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+/* Destaca a apresentacao inicial com fundo vermelho, texto centralizado e cantos arredondados. */
+#inicio {
+  padding: clamp(2rem, 7vw, 5rem) 1.5rem;
+  border-radius: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  text-align: center;
+}
+
+/* Garante que o titulo e o link da apresentacao inicial contrastem com o fundo vermelho. */
+#inicio h1,
+#inicio a {
+  color: var(--color-surface);
+}
+
+/* Mostra o link principal como item separado e com peso visual maior. */
+#inicio a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+/* Separa a secao do cardapio da apresentacao inicial. */
+#cardapio {
+  margin-top: 2rem;
+}
+
+/* Aparencia compartilhada das caixas de conteudo nas paginas.
+   O fundo branco, a borda e o arredondamento distinguem cada bloco do fundo geral. */
+#cardapio article,
+.Cardapio article,
+.avaliacao > section,
+.resumo-pedido,
+#contato,
+#localizacao,
+#ConteinerFormContato,
+#sobre {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+}
+
+/* Separa os itens do cardapio da pagina inicial. */
+#cardapio article {
+  margin: 1rem 0;
+}
+
+/* Exibe os produtos em colunas; cada coluna tem largura minima e se adapta ao espaco. */
+.Cardapio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.25rem;
+}
+
+/* Remove margens extras dos artigos para que o espacamento seja controlado pela grade. */
+.Cardapio article {
+  margin: 0;
+}
+
+/* Ajusta as imagens dos produtos ao cartao sem distorcer; object-fit recorta quando preciso. */
+.Cardapio img {
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Centraliza o nome dos produtos na pagina de cardapio. */
+.Cardapio article h3 {
+  text-align: center;
+}
+
+/* Limita a largura do conteudo de avaliacoes para facilitar a leitura. */
+.avaliacao {
+  max-width: 700px;
+}
+
+/* Cria separacao entre os blocos de avaliacao e formulario. */
+.avaliacao > section {
+  margin-bottom: 1.25rem;
+}
+
+/* Organiza campos de formularios em coluna com espacamento consistente. */
+.avaliacao form,
+#FormContato {
+  display: grid;
+  gap: 0.65rem;
+}
+
+/* Destaca os rotulos para deixar claro a qual campo pertencem. */
+label {
+  font-weight: 700;
+}
+
+/* Aplica o mesmo tamanho, tipografia, borda e fundo aos campos de formularios.
+   width: 100% permite preencher o container; max-width impede ultrapassa-lo. */
 input,
-textarea {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  border: 1px #cccccc solid;
-  border-radius: 8px;
+textarea,
+select {
+  width: 100%;
   max-width: 100%;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-input:focus,
-textarea:focus {
-  outline: 2px solid yellow;
-}
-
-button {
-  background-color: red;
-  color: #f5f5f5;
-  border: none;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  padding: 10px 20px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+/* Deixa a area de texto confortavel e permite ao usuario aumentar sua altura. */
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+/* Padroniza botoes principais com cor, espacamento, cantos e cursor de clique. */
+button {
+  padding: 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  font: inherit;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.avaliacao {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+/* Corrige a cor dos links que estao dentro dos botoes, inclusive no hover.
+   Assim o texto branco continua legivel sobre o fundo vermelho. */
+button a,
+button a:hover {
+  color: var(--color-surface);
+  text-decoration: none;
+}
+
+/* Escurece o botao ao passar o mouse para indicar interacao. */
+button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Exibe contorno bem visivel ao navegar usando teclado (por exemplo, com Tab). */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Reforca a borda dos campos durante o foco, sem remover o contorno acessivel global. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--color-primary);
+}
+
+/* Ajustes para celulares: empilha o cabecalho e reduz margens laterais e espacamentos. */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  nav {
+    gap: 0.35rem 0.9rem;
+  }
+
+  main {
+    width: min(100% - 1.25rem, var(--content-width));
+    margin: 1.25rem auto;
+  }
+}
+
+/* Anima cores somente quando o sistema do usuario nao pede movimento reduzido. */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition: color 150ms ease, background-color 150ms ease;
+  }
 }

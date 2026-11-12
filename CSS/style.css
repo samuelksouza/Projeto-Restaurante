@@ -1,3 +1,60 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: black;
+    background-color: white;
+}
+
+h1,
+h2,
+h3 {
+    color: red;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header a {
+    text-decoration:none;
+    color: white;
+
+}
+
+footer {
+  color: white;
+  background-color: red;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+ 
+.logo {
+  text-decoration: none; /* Tira o sublinado do link */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte da letra */
+  font-size: 24px; /* Define o tamanho da letra */
+  font-weight: bold; /* Coloca em negrito */
+  color: white; /* cor da letra */
+}
+
+.logo h1 {
+    color: white;
+}
+
+.logo span {
+  color: yellow;
 }

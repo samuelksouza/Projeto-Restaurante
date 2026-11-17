@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+.pedido {
+    font-weight: 10px;
+    border: 1px  #f5f5f5 solid;
+    border-radius: 8PX;
+    padding: 15px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pedido img{
+    border-radius: 20px 20px;
+}
+
+.btn-comprar {
+    margin: 20px;
+    padding: 20px 20px;
+    background-color: red;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+
+.sobre {
+    border: 1px #f5f5f5 solid;
+    font-weight: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 16px;
+    
+}
+=======
 /* Variaveis centralizam cores e largura maxima para facilitar ajustes visuais. */
 :root {
   color-scheme: light;
@@ -321,3 +354,4 @@ select:focus-visible {
     transition: color 150ms ease, background-color 150ms ease;
   }
 }
+>>>>>>> 8be6579b31f5913736a3fbb297079bc6795f6782

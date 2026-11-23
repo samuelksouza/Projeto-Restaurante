@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* CONFIGURAÇÕES GERAIS */
 
 body {
@@ -147,6 +147,10 @@ nav a:hover{
 .btn-primario:hover, .btn-secundario:hover{
     opacity: 0.8; /* TRANSPARENCIA DO BOTÃO */
 }
+.btn_fazer_pedido {
+
+  margin-top: 10px;
+}
 
 .destaques {
     padding: 30px 20px;
@@ -238,7 +242,7 @@ button{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.253);
     gap: 10px;
 }
-=======
+
 /* Variaveis centralizam cores e largura maxima para facilitar ajustes visuais. */
 :root {
   color-scheme: light;
@@ -563,7 +567,7 @@ select:focus-visible {
       color 150ms ease,
       background-color 150ms ease;
   }
-<<<<<<< HEAD
+
 
   /* Contato */
 }
@@ -598,7 +602,4 @@ input, textarea {
     max-width: 100%;
     box-sizing: border-box;
 }
-=======
-}
->>>>>>> 8be6579b31f5913736a3fbb297079bc6795f6782
->>>>>>> 4d7682dd805d7f8ba3158115893f8a97d10fa8f5
+

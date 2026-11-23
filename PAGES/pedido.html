@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos | Pojos Hermanos</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    
+     
 </head>
 
 <body>
@@ -62,8 +64,35 @@
                 Finalizar Pedido
             </button>
         </section>
+        <section id="pedidos">
+            <form>
+                <label for="nome" id="lanche">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="lanche">Escolha seu lanche:</label>
+        <select id="lanche">
+            <option>Hambúrguer - R$ 23,90</option>
+            <option>Misto-quente - R$ 8,00</option>
+            <option>Suco-de-laranja - 7,50</option>
+            <option>Tacos - R$ 25,90</option>
+            <option>esfiha-aberta-de-carne - R$ 7,00</option>
+            <option>batatas - R$ 15,90</option>
+            
+        </select>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" min="1" value="1">
+
+        <button type="submit" class="btn_fazer_pedido">Fazer pedido</button>
+            </form>
+
+
+
+
+        </section>
 
     </main>
+    
 
     <footer>
         <section>
@@ -86,6 +115,7 @@
 
       <p>&copy; 2026 Pojos Hermanos. Todos os direitos reservados.</p>
     </footer>
+     <script src="function.js"></script>
 
 </body>
 
